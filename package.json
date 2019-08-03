@@ -1,0 +1,36 @@
+{
+  "name": "airplane",
+  "version": "1.0.0",
+  "description": "Test project for new job",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "rm -rf dist && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mag",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "file-loader": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.18.2",
+    "style-loader": "^0.23.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
