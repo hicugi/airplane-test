@@ -1,0 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  z-index: inherit;
+  background: #fff;
+  font-family: var(--font-default);
+}
+
+strong {
+  font-family: var(--font-bold);
+}
