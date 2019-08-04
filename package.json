@@ -11,7 +11,9 @@
   },
   "author": "Mag",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "embla-carousel": "^2.3.3"
+  },
   "devDependencies": {
     "babel-loader": "^8.0.6",
     "css-loader": "^3.1.0",
