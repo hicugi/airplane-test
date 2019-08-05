@@ -4,10 +4,84 @@
 .dropdown__body {
   position: absolute;
   top: 100%;
+  left: 50%;
   display: none;
+  min-width: 305px;
+  border-radius: 4px;
+  padding: 17px 30px;
   margin-top: -1px;
+  margin-left: -30px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.dropdown__body::before {
+  position: absolute;
+  bottom: 100%;
+  left: 23px;
+  border-color: transparent transparent #fff;
+  border-style: solid;
+  border-width: 0 7px 12px;
+  opacity: 0.5;
+  content: "";
 }
 
+/* menu */
+.dropdown-menu {
+  padding: 0;
+  margin: 0 -30px;
+  list-style: none;
+}
+.dropdown-menu__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  padding-left: 89px;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  transition: linear 0.2s;
+}
+.dropdown-menu__link:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.dropdown-menu__icon {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background: no-repeat center;
+}
+.dropdown-menu__icon_book {
+  background-image: url(/assets/css/imgs/book.png);
+}
+.dropdown-menu__icon_cog {
+  background-image: url(/assets/css/imgs/cog.png);
+}
+.dropdown-menu__icon_contacts {
+  background-image: url(/assets/css/imgs/contacts.png);
+}
+.dropdown-menu__icon_joystick {
+  background-image: url(/assets/css/imgs/joystick.png);
+}
+.dropdown-menu__icon_shop {
+  background-image: url(/assets/css/imgs/shop.png);
+}
+.dropdown-menu__icon_signout {
+  background-image: url(/assets/css/imgs/sign-out.png);
+}
+
+.dropdown-menu__text {
+  color: #000;
+  font-size: 16px;
+  line-height: 1.25em;
+}
+.dropdown-menu__item + .dropdown-menu__item {
+  margin-top: 4px;
+}
+
+/* hover */
 .dropdown:hover .dropdown__body {
   display: block;
 }

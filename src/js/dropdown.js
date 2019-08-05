@@ -25,7 +25,7 @@ export default function(parent, { menu: menuItems, info, link }) {
       li.innerHTML = [
         `<a class="dropdown-menu__link" href="${itemLink}">`,
         [
-          `<i class="dropdown-menu__icon dropdown-menu_${icon}"></i>`,
+          `<i class="dropdown-menu__icon dropdown-menu__icon_${icon}"></i>`,
           `<span class="dropdown-menu__text">${title}</span>`
         ].join(""),
         "</a>"
@@ -41,7 +41,7 @@ export default function(parent, { menu: menuItems, info, link }) {
   if (link) {
     const d = document.createElement("DIV");
     d.className = "dropdown-footer";
-    d.innerText = `<a class="dropdown-footer__link" href="${link.link}">${link.text}</a>`;
+    d.innerHTML = `<a class="dropdown-footer__link" href="${link.link}">${link.text}</a>`;
 
     body.appendChild(d);
   }

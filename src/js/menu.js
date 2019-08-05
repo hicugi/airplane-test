@@ -24,7 +24,7 @@ const items = [
         },
         {
           title: "Exit",
-          icon: "sign-out",
+          icon: "signout",
           link: "#"
         }
       ]
