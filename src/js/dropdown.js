@@ -41,7 +41,7 @@ export default function(parent, { menu: menuItems, info, link }) {
   if (link) {
     const d = document.createElement("DIV");
     d.className = "dropdown-footer";
-    d.innerHTML = `<a class="dropdown-footer__link" href="${link.link}">${link.text}</a>`;
+    d.innerHTML = `<a class="dropdown-footer__link" href="${link.link}"><span>${link.text}</span></a>`;
 
     body.appendChild(d);
   }
