@@ -1,0 +1,13 @@
+.dropdown {
+  position: relative;
+}
+.dropdown__body {
+  position: absolute;
+  top: 100%;
+  display: none;
+  margin-top: -1px;
+}
+
+.dropdown:hover .dropdown__body {
+  display: block;
+}
