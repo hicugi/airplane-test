@@ -15,7 +15,7 @@ module.exports = {
     publicPath: "/",
     port: 9000,
     contentBase: path.join(process.cwd(), "public"),
-    host: "localhost",
+    host: "0.0.0.0",
     historyApiFallback: true,
     noInfo: false,
     stats: "minimal",
