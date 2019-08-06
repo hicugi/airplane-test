@@ -4,7 +4,8 @@
   left: 50%;
   transform: translateX(-50%);
   min-width: 242px;
-  background: linear-gradient(-90deg, #e869f8, #3f85e7);
+  background: linear-gradient(90deg, #e869f8, #3f85e7);
+  border-radius: 4px;
   color: #fff;
   text-align: center;
 }
