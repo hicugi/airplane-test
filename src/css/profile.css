@@ -7,15 +7,16 @@
 
 /* header */
 .profile-header {
+  position: relative;
   display: flex;
   align-items: center;
   padding-right: 50px;
 }
 .profile-header::before {
   position: absolute;
-  top: 40%;
+  top: 50%;
   right: 5px;
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-100%) rotate(135deg);
   width: 10px;
   height: 10px;
   border: 1px solid;
@@ -25,7 +26,7 @@
 }
 .profile:hover .profile-header::before {
   top: 30%;
-  transform: translateY(-50%) rotate(135deg);
+  transform: translateY(75%) rotate(315deg);
 }
 
 .profile-header__name {
