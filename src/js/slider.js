@@ -1,4 +1,5 @@
 import EmblaCarousel from "embla-carousel";
+import sliderItems from "./items";
 
 const containerSelector = "#background";
 const btnSelector = ".bg-slider__btn";
@@ -8,51 +9,6 @@ const container = document.querySelector(containerSelector);
 
 // slider items
 let currentItem = 3;
-const sliderItems = [
-  {
-    title: "Hawk",
-    alias: "hawk",
-    preview: 0,
-    items: [1, 2]
-  },
-  {
-    title: "Mirage 2000",
-    alias: "mirage-2000c",
-    preview: 0,
-    items: [1, 2]
-  },
-  {
-    title: "Yak-52",
-    alias: "yak-52",
-    preview: 0,
-    items: [1, 2]
-  },
-  {
-    title: "F/A-18C",
-    alias: "fa-18c",
-    preview: 0,
-    items: [1, 2, 3]
-  },
-  {
-    title: "C-101 Aviojet",
-    alias: "c-101",
-    preview: 0,
-    items: [1, 2]
-  },
-  {
-    title: "MiG-15",
-    alias: "mig-15",
-    preview: 0,
-    items: [1, 2],
-    payable: true
-  },
-  {
-    title: "L-39C",
-    alias: "l-39c",
-    preview: 0,
-    items: [1, 2]
-  }
-];
 
 function onSelectItem(index) {
   currentItem = index;
@@ -148,3 +104,60 @@ function onSelectItem(index) {
 }
 
 onSelectItem(currentItem);
+
+// catalog
+const catalogSlider = document.querySelector(".catalog-slider");
+const catalogItems = document.querySelector(".catalog-viewport");
+
+sliderItems.forEach(({ title, alias, preview, payable }, index) => {
+  const li = document.createElement("LI");
+  const link = `/assets/img/items/${alias}/${preview}.`;
+  li.className = "catalog-item";
+
+  let buy = "";
+  if (payable) {
+    li.classList.add("catalog-item--payable");
+    buy = [
+      `<div class="catalog-buy">`,
+      `<p class="catalog-buy__text">Buy to unlock</p>`,
+      `<button class="catalog-buy__btn">Buy</button>`,
+      `</div>`
+    ].join("");
+  } else {
+    li.addEventListener("click", () => onSelectItem(index));
+  }
+
+  li.innerHTML = [
+    `<div class="catalog-item__image">`,
+    [
+      `<picture>`,
+      `<source srcset="${link}webp" type="image/webp">`,
+      `<img src="${link}jpg" type="image/jpg" alt="${title}">`,
+      `</picture>`,
+      buy
+    ].join(""),
+    `</div>`,
+    `<h3 class="catalog-item__title">${title}</h3>`
+  ].join("");
+
+  catalogItems.appendChild(li);
+});
+const emblaCatalog = EmblaCarousel(catalogSlider, {
+  slidesToScroll: 7
+});
+
+// btns
+{
+  const catalogContainer = document.querySelector(".catalog__container");
+  const catalogPrev = document.createElement("BUTTON");
+  const catalogNext = document.createElement("BUTTON");
+
+  catalogPrev.className = "catalog__arrow catalog__arrow_prev";
+  catalogNext.className = "catalog__arrow catalog__arrow_next";
+
+  catalogPrev.addEventListener("click", emblaCatalog.scrollPrev);
+  catalogNext.addEventListener("click", emblaCatalog.scrollNext);
+
+  catalogContainer.appendChild(catalogPrev);
+  catalogContainer.appendChild(catalogNext);
+}
