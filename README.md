@@ -13,6 +13,4 @@ npm run dev
 npm run build
 ```
 
-## Demo
-
-Publicated link
+## [Demo](http://airplane.webmaho.com/)
