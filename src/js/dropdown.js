@@ -1,8 +1,21 @@
-export default function(parent, { menu: menuItems, info, link }) {
+export default function(
+  parent,
+  { header, menu: menuItems, info, link, variant }
+) {
   parent.classList.add("dropdown");
 
   const body = document.createElement("DIV");
   body.className = "dropdown__body";
+
+  // header
+  if (header) {
+    body.appendChild(header);
+  }
+
+  // variant
+  if (variant) {
+    body.classList.add("dropdown__body_right");
+  }
 
   // info
   if (info) {

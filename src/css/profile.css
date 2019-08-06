@@ -1,0 +1,156 @@
+.profile {
+  position: absolute;
+  top: 44px;
+  right: 15px;
+  padding-bottom: 34px;
+}
+
+/* header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+}
+.profile-header::before {
+  position: absolute;
+  top: 40%;
+  right: 5px;
+  transform: translateY(-50%) rotate(-45deg);
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  border-color: #fff #fff transparent transparent;
+  content: "";
+  transition: linear 0.2s;
+}
+.profile:hover .profile-header::before {
+  top: 30%;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.profile-header__name {
+  padding-right: 32px;
+  color: #fff;
+  font-size: 19px;
+}
+
+.profile-header__image {
+  border-radius: 100%;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+}
+.profile-header__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile .dropdown__body {
+  right: 0;
+  margin-right: 0;
+}
+.profile .dropdown__body::before {
+  right: 73px;
+}
+
+/* info */
+.profile-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 13px 0 30px;
+  margin-bottom: 16px;
+}
+.profile-info::before {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 60px);
+  height: 1px;
+  background-color: #000;
+  opacity: 0.15;
+  content: "";
+}
+
+/* rank */
+.profile-info__rank {
+  position: relative;
+  z-index: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #25262b;
+  border-radius: 100%;
+}
+.profile-info__rank::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background: url(/assets/css/imgs/rank.png) #3a3d44 no-repeat 50% 65%;
+  border-radius: 100%;
+  content: "";
+}
+.profile-info__rank i,
+.profile-info__rank i::before {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid;
+  border-color: #7dbb63 transparent transparent transparent;
+  border-radius: 100%;
+}
+.profile-info__rank i::before {
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-color: #25262b transparent transparent transparent;
+  content: "";
+}
+
+.profile-info__rank i:nth-child(1) {
+  transform: rotate(-135deg);
+}
+.profile-info__rank i:nth-child(2) {
+  transform: rotate(-90deg);
+}
+.profile-info__rank i:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.profile-info__rank i:nth-child(4) {
+  transform: rotate(0deg);
+}
+.profile-info__rank i:nth-child(5) {
+  transform: rotate(45deg);
+}
+.profile-info__rank i:nth-child(6) {
+  transform: rotate(90deg);
+}
+.profile-info__rank i:nth-child(7) {
+  transform: rotate(135deg);
+}
+
+.profile-info__body {
+  padding-left: 25px;
+}
+
+.profile-info__subtitle {
+  margin-top: 8px;
+  color: #191919;
+  font-family: var(--font-light);
+  font-size: 12px;
+}
+.profile-info__subtitle span {
+  color: #000;
+}
+.profile-info__title,
+.profile-info__subtitle {
+  line-height: 1.25em;
+}
